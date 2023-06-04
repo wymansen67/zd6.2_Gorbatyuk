@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.PageChange"
+             Title="Изменение">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            
+            <StackLayout Orientation="Vertical">
+                <Label Text="Имя:"/>
+                <Entry x:Name="EntryFirstName" Placeholder="Введите имя."/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Отчество:"/>
+                <Entry x:Name="EntryMiddleName" Placeholder="Введите отчество."/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Фамилию:"/>
+                <Entry x:Name="EntryLastName" Placeholder="Введите фамилию."/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Группa:"/>
+                <Entry x:Name="EntryGroup" Placeholder="Введите Группу."/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Классный Руководителя:"/>
+                <Entry x:Name="EntryClassruk" Placeholder="Введите куратора."/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Button Text="Изменить" Clicked="ChangeButton_Clicked"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
