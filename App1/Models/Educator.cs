@@ -11,6 +11,8 @@ namespace App1.Models
         public string Name { get; set; }
         public string FacultyNumber { get; set; }
         public int Workload { get; set; }
-        public SqlMoney Bonus { get; set; }
+        public bool Bonus { get; set; }
+
+        public override string ToString() => $"{this.Name}\n{this.FacultyNumber}\n{this.Workload}\n{this.Bonus}";
     }
 }

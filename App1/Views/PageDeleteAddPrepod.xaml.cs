@@ -18,6 +18,13 @@ namespace App1
             InitializeComponent();
         }
 
+/*         protected override async void OnAppearing()
+        {
+            collectionView.ItemsSource =  await App.CollegeDB.GetEducatorsAsync();
+
+            base.OnAppearing();
+        }*/
+
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
              string error = null;
@@ -30,7 +37,7 @@ namespace App1
             if (CheckFaculty(EntryFacultyNumber.Text) == "") educator.FacultyNumber = EntryFacultyNumber.Text;
             else error += $"{CheckFaculty(EntryFacultyNumber.Text)}\n";
 
-            if (CheckWorkload(EntryWorkload.Text) == "") { educator.Workload = Convert.ToInt32(EntryWorkload.Text); if (Convert.ToInt32(EntryWorkload.Text) > 1440) educator.Bonus = 5000; }
+            if (CheckWorkload(EntryWorkload.Text) == "") { educator.Workload = Convert.ToInt32(EntryWorkload.Text); if (Convert.ToInt32(EntryWorkload.Text) > 1440) educator.Bonus = true; else educator.Bonus = false; } 
             else error += $"{CheckWorkload(EntryWorkload.Text)}\n";           
 
             if (!string.IsNullOrEmpty(error)) DisplayAlert("Error", error, "OK");
@@ -42,6 +49,11 @@ namespace App1
              Educator educator = (Educator)BindingContext;
 
              await App.CollegeDB.SaveEducatorAsync(educator);
+        }
+
+        private async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
         static string CheckUser(string user)

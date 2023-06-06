@@ -3,28 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.PageDeleteAndAddStudent"
              Title="Управление студентами">
-    
+
+    <ContentPage.Resources>
+        <StyleSheet Source="mystyles.css"/>
+    </ContentPage.Resources>
+
     <ContentPage.Content>      
         <StackLayout Orientation="Vertical">
             
             <StackLayout Orientation="Vertical">
-                <Label Text="Введите Имя:"/>
-                <Entry x:Name="EntryFirstName" Placeholder="Введите имя."/>
+                <Label StyleId="label" Text="Введите Имя:"/>
+                <Entry x:Name="EntryFirstName" StyleId="entry" Placeholder="Введите имя."/>
             </StackLayout>
             
             <StackLayout Orientation="Vertical">
-                <Label Text="Введите Отчество:"/>
-                <Entry x:Name="EntryMiddleName" Placeholder="Введите отчество."/>
+                <Label StyleId="label" Text="Введите Отчество:"/>
+                <Entry x:Name="EntryMiddleName" StyleId="entry" Placeholder="Введите отчество."/>
             </StackLayout>
 
             <StackLayout Orientation="Vertical">
-                <Label Text="Введите Фамилию:"/>
-                <Entry x:Name="EntryLastName" Placeholder="Введите фамилию."/>
+                <Label StyleId="label" Text="Введите Фамилию:"/>
+                <Entry x:Name="EntryLastName" StyleId="entry" Placeholder="Введите фамилию."/>
             </StackLayout>
 
             <StackLayout Orientation="Vertical">
-                <Label Text="Введите Группу:"/>
-                <Entry x:Name="EntryGroup" Placeholder="Введите Группу."/>
+                <Label StyleId="label" Text="Введите Группу:"/>
+                <Entry x:Name="EntryGroup" StyleId="entry" Placeholder="Введите Группу."/>
             </StackLayout>
 
             <StackLayout Orientation="Vertical">
@@ -32,32 +36,13 @@
             </StackLayout>
 
             <StackLayout Orientation="Vertical">
-                <Button Text="Добавить" Clicked="AddButton_Clicked"/>
+                <Button StyleId="button" Text="Добавить" Clicked="AddButton_Clicked"/>
             </StackLayout>
 
             <StackLayout Orientation="Vertical">
-                <Button Text="Удалить" Clicked="AddButton_Clicked"/>
+                <Button StyleId="button" Text="Удалить" Clicked="AddButton_Clicked"/>
             </StackLayout>
 
-            <CollectionView x:Name="collectionView"
-                            Margin="10"
-                            SelectionMode="Single"
-                            SelectionChanged="OnSelectionChanged">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical"
-                                       ItemSpacing="5"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding Text}"
-                                   FontSize="Medium"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-
-            </CollectionView>
-            
         </StackLayout>        
     </ContentPage.Content>
     

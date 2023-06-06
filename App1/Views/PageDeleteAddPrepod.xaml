@@ -3,52 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.PageDeleteAddPrepod"
              Title="Управление преподавателями">
-    
+
+    <ContentPage.Resources>
+        <StyleSheet Source="mystyles.css"/>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
 
             <StackLayout Orientation="Vertical">
-                <Label Text="Введите Фамилию и инициалы:"/>
-                <Entry x:Name="EntryName" Placeholder="Введите фамилию и инициалы."/>
+                <Label StyleId="label" Text="Введите Фамилию и инициалы:"/>
+                <Entry x:Name="EntryName" StyleId="entry" Placeholder="Введите фамилию и инициалы."/>
             </StackLayout>
 
             <StackLayout Orientation="Vertical">
-                <Label Text="Введите номер специальности:"/>
-                <Entry x:Name="EntryFacultyNumber" Placeholder="Введите номер специальности."/>
+                <Label StyleId="label" Text="Введите номер специальности:"/>
+                <Entry x:Name="EntryFacultyNumber" StyleId="entry" Placeholder="Введите номер специальности."/>
             </StackLayout>
             
             <StackLayout Orientation="Vertical">
-                <Label Text="Введите нагрузку:"/>
-                <Entry x:Name="EntryWorkload" Placeholder="Введите нагрузку."/>
+                <Label StyleId="label" Text="Введите нагрузку:"/>
+                <Entry x:Name="EntryWorkload" StyleId="entry" Placeholder="Введите нагрузку."/>
             </StackLayout>
             
             <StackLayout Orientation="Vertical">
-                <Button Text="Добавить" Clicked="AddButton_Clicked"/>
+                <Button StyleId="button" Text="Добавить" Clicked="AddButton_Clicked"/>
             </StackLayout>
-            
+
 
             <StackLayout Orientation="Vertical">
-                <Button Text="Удалить" Clicked="DeleteButton_Clicked"/>
+                <Button StyleId="button" Text="Удалить" Clicked="DeleteButton_Clicked"/>
             </StackLayout>
-
-            <CollectionView x:Name="collectionView"
-                            Margin="10"
-                            SelectionMode="Single"
-                            SelectionChanged="OnSelectionChanged">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical"
-                                       ItemSpacing="5"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding Text}"
-                                   FontSize="Medium"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-
-            </CollectionView>
 
         </StackLayout>
     </ContentPage.Content>

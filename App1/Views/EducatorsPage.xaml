@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:App1"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:App1" xmlns:local1="clr-namespace:App1.Views"
             x:Class="App1.Views.EducatorsPage">
 
     <TabbedPage.Children>
-        <local:PageSearch/>
-        <local:PageChange/>
+        <local1:GetLists/>
         <local:PageDeleteAndAddStudent/>
         <local:PageDeleteAddPrepod/>
     </TabbedPage.Children>

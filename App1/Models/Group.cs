@@ -11,5 +11,7 @@ namespace App1.Models
         public string FacultyNumber { get; set; }
         public byte Course { get; set; }
         public bool IsBudget { get; set; }
+
+        public override string ToString() => $"{this.GroupName}\n{this.FacultyNumber}\n{this.Course}";
     }
 }

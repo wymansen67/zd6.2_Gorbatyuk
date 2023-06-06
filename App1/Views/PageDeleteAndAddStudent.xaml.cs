@@ -13,6 +13,8 @@ namespace App1
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public partial class PageDeleteAndAddStudent : ContentPage
     {
+        public Label labelOne;
+
         public String ItemId
         {
             set
@@ -31,8 +33,9 @@ namespace App1
             {
                 DatePicker.Date = DateTime.Today;
                 DatePicker.MaximumDate = DateTime.Today;
-            }
-        }        
+            }            
+
+        }
 
         private async void LoadStudent(string value)
         {
@@ -49,7 +52,7 @@ namespace App1
         {
             string error = null;
 
-            Student student = (Student)BindingContext;
+            Student student = new Student();
 
             if (CheckUser(EntryFirstName.Text) == "") student.FirstName = EntryFirstName.Text;
             else error = $"{CheckUser(EntryFirstName.Text)}\n";
@@ -63,8 +66,7 @@ namespace App1
             if (CheckGroup(EntryGroup.Text) == "") student.Group = EntryGroup.Text;
             else error += $"{CheckGroup(EntryGroup.Text)}\n";
 
-            if (DateTime.Compare(DatePicker.Date, DateTime.Today) < 0) student.DateOfBirth = DatePicker.Date;
-            else error += $"Недопустимая дата рождения";
+            student.DateOfBirth = DatePicker.Date;
 
             if (!string.IsNullOrEmpty(error)) DisplayAlert("Error", error, "OK");
             else {await App.CollegeDB.SaveStudentAsync(student); DisplayAlert("Info", "Student was added successfuly", "OK"); }
@@ -76,6 +78,11 @@ namespace App1
            Student student = (Student)BindingContext;
 
            await App.CollegeDB.DeleteStudentAsync(student);
+        }
+
+        private async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
         static string CheckUser(string user)

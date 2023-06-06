@@ -68,7 +68,7 @@ namespace App1
                     else if (Pass >= 31 && Pass <= 34) Navigation.PushAsync(new StudentsPage(3));
                     else if (Pass >= 41 && Pass <= 44) Navigation.PushAsync(new StudentsPage(4));
                     else if (Pass >= 45 && Pass <= 85) Navigation.PushAsync(new EducatorsPage());
-                    else if (Pass >= 90 && Pass <= 99) Navigation.PushAsync(new StudentsPage(1));
+                    else if (Pass >= 90 && Pass <= 99) Navigation.PushAsync(new AdmissionsCommittee());
                     else DisplayAlert("Error", $"No user group using such combination of digits was found", "OK");
                 }
                 else

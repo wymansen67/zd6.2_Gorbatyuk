@@ -24,7 +24,7 @@ namespace App1.Data
         //Student Table
         public Task<List<Student>> GetStudentsAsync()
         {
-            return db.Table<Student>().ToListAsync();
+            return db.Table<Student>().OrderBy(x => x.FirstName).ToListAsync();
         }
 
         public Task<Student> GetStudentAsync(int id)
@@ -48,7 +48,7 @@ namespace App1.Data
         //Group Table
         public Task<List<Group>> GetGroupsAsync()
         {
-            return db.Table<Group>().ToListAsync();
+            return db.Table<Group>().OrderBy(x => x.GroupName).ToListAsync();
         }
 
         public Task<Group> GetGroupAsync(string GroupName)
@@ -70,9 +70,9 @@ namespace App1.Data
         }
 
         //Faculty Table
-        public Task<List<Faculty>> GetFacultysAsync()
+        public Task<List<Faculty>> GetFacultiesAsync()
         {
-            return db.Table<Faculty>().ToListAsync();
+            return db.Table<Faculty>().OrderBy(x => x.FacultyNumber).ToListAsync();
         }
 
         public Task<Faculty> GetFacultyAsync(string FacultyNumber)
@@ -96,7 +96,7 @@ namespace App1.Data
         //Educator Table
         public Task<List<Educator>> GetEducatorsAsync()
         {
-            return db.Table<Educator>().ToListAsync();
+            return db.Table<Educator>().OrderBy(x => x.Name).ToListAsync();
         }
 
         public Task<Educator> GetEducatorAsync(string EducatorNumber)

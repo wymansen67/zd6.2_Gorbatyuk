@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.GetLists"
+             Title="Списки">
+    
+    <ContentPage.Resources>
+        <StyleSheet Source="mystyles.css"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout>
+                <Button StyleId="button" x:Name="GetFaculties" Text="Get Faculties list" Clicked="GetFacultiesButton"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button StyleId="button" x:Name="GetGroups" Text="Get Groups list" Clicked="GetGroupsButton"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button StyleId="button" x:Name="GetStudents" Text="Get Students list" Clicked="GetStudentsButton"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button StyleId="button" x:Name="GetEducators" Text="Get Educators list" Clicked="GetEducatorsButton"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -9,5 +9,7 @@ namespace App1.Models
     {
         public string FacultyNumber { get; set; }
         public string FacultyName { get; set;}
+
+        public override string ToString() => $"{this.FacultyNumber}\n{this.FacultyName}";
     }
 }
